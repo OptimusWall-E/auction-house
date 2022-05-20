@@ -1,0 +1,31 @@
+<div class='row'>
+  <div class='col-md-6'>
+    <%= form_with(model: auction) do |form| %>
+      <% if auction.errors.any? %>
+        <div class='alert alert-danger'>
+          <p><%= pluralize(auction.errors.count, "error") %> prohibited this auction from being saved:</p>
+
+          <ul>
+            <% auction.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class='mb-3'>
+        <%= form.label :ends_at, class: 'form-label' %>
+        <%= form.datetime_field :ends_at, class: 'form-control' %>
+      </div>
+
+      <div class='mb-3'>
+        <%= form.label :name, class: 'form-label' %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div>
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

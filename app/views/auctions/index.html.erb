@@ -1,0 +1,12 @@
+<h1>Auctions</h1>
+
+<div id="auctions">
+  <% @auctions.each do |auction| %>
+    <%= render auction %>
+    <p>
+      <%= link_to "Show this auction", auction %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New auction", new_auction_path %>
