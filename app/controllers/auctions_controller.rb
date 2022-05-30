@@ -65,6 +65,6 @@ class AuctionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def auction_params
-      params.require(:auction).permit(:name, :ends_at, :id)
+      params.require(:auction, :id).permit(:name, :ends_at)
     end
 end
