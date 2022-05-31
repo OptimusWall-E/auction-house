@@ -60,11 +60,12 @@ class AuctionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_auction
+      byebug
       @auction = Auction.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def auction_params
-      params.require(:auction, :id).permit(:name, :ends_at)
+      params.require(:auction).permit(:name, :ends_at, :submitBid)
     end
 end
